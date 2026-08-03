@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Phone, MapPin, Mail, Clock, Instagram, Facebook, Twitter } from 'lucide-react'
+import Link from "next/link"
+import { Phone, MapPin, Mail, Instagram, Facebook, Twitter } from "lucide-react"
 
 export function Footer() {
   return (
@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <h3 className="text-2xl font-display font-bold text-brand-400 mb-4">Bar Mubiti</h3>
             <p className="text-white/60 text-sm leading-relaxed mb-4">
-              A Taste of Kigali's Grill Scene. Authentic Rwandan flavors, grilled to perfection, in a vibrant atmosphere.
+              A Taste of Kigali&apos;s Grill Scene. Authentic Rwandan flavors, grilled to perfection, in a vibrant atmosphere.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-brand-600 hover:text-white transition-all">
@@ -27,9 +27,9 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home','About','Menu','Gallery','Contact'].map((item) => (
+              {["Home","About","Menu","Gallery","Contact"].map((item) => (
                 <li key={item}>
-                  <Link href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} className="text-white/60 hover:text-brand-400 text-sm transition-colors">
+                  <Link href={`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`} className="text-white/60 hover:text-brand-400 text-sm transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -58,9 +58,9 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Hours</h4>
             <ul className="space-y-2 text-white/60 text-sm">
-              <li className="flex justify-between"><span>Mon – Thu</span><span>11am – 12am</span></li>
-              <li className="flex justify-between"><span>Fri – Sat</span><span>11am – 2am</span></li>
-              <li className="flex justify-between"><span>Sunday</span><span>12pm – 11pm</span></li>
+              <li className="flex justify-between"><span>Mon &ndash; Thu</span><span>11am &ndash; 12am</span></li>
+              <li className="flex justify-between"><span>Fri &ndash; Sat</span><span>11am &ndash; 2am</span></li>
+              <li className="flex justify-between"><span>Sunday</span><span>12pm &ndash; 11pm</span></li>
             </ul>
           </div>
         </div>

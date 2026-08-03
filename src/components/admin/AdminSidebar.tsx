@@ -1,22 +1,22 @@
-'use client'
-import { useState } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { signOut } from 'next-auth/react'
-import { motion, AnimatePresence } from 'framer-motion'
+"use client"
+import { useState } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { signOut } from "next-auth/react"
+import { motion, AnimatePresence } from "framer-motion"
 import {
-  LayoutDashboard, Building2, Clock, UtensilsCrossed, ImageIcon,
+  LayoutDashboard, Building2, UtensilsCrossed, ImageIcon,
   Star, CalendarDays, Settings, LogOut, Menu, X, ChevronRight
-} from 'lucide-react'
+} from "lucide-react"
 
 const navItems = [
-  { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/admin/business', label: 'Business Info', icon: Building2 },
-  { href: '/admin/menu', label: 'Menu', icon: UtensilsCrossed },
-  { href: '/admin/gallery', label: 'Gallery', icon: ImageIcon },
-  { href: '/admin/reviews', label: 'Reviews', icon: Star },
-  { href: '/admin/reservations', label: 'Reservations', icon: CalendarDays },
-  { href: '/admin/settings', label: 'Settings', icon: Settings },
+  { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/admin/business", label: "Business Info", icon: Building2 },
+  { href: "/admin/menu", label: "Menu", icon: UtensilsCrossed },
+  { href: "/admin/gallery", label: "Gallery", icon: ImageIcon },
+  { href: "/admin/reviews", label: "Reviews", icon: Star },
+  { href: "/admin/reservations", label: "Reservations", icon: CalendarDays },
+  { href: "/admin/settings", label: "Settings", icon: Settings },
 ]
 
 export function AdminSidebar() {
@@ -46,8 +46,8 @@ export function AdminSidebar() {
               onClick={() => setMobileOpen(false)}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                 active
-                  ? 'bg-brand-600/20 text-brand-400 border border-brand-500/20'
-                  : 'text-white/50 hover:text-white hover:bg-white/5'
+                  ? "bg-brand-600/20 text-brand-400 border border-brand-500/20"
+                  : "text-white/50 hover:text-white hover:bg-white/5"
               }`}
             >
               <item.icon size={18} />
@@ -59,7 +59,7 @@ export function AdminSidebar() {
       </nav>
       <div className="p-4 border-t border-white/5">
         <button
-          onClick={() => signOut({ callbackUrl: '/admin/login' })}
+          onClick={() => signOut({ callbackUrl: "/admin/login" })}
           className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white/50 hover:text-red-400 hover:bg-red-500/10 transition-all w-full"
         >
           <LogOut size={18} /> Sign Out
@@ -70,7 +70,6 @@ export function AdminSidebar() {
 
   return (
     <>
-      {/* Mobile toggle */}
       <button
         onClick={() => setMobileOpen(true)}
         className="lg:hidden fixed top-4 left-4 z-50 w-10 h-10 rounded-xl bg-dark-900 border border-white/10 flex items-center justify-center text-white"
@@ -78,12 +77,10 @@ export function AdminSidebar() {
         <Menu size={20} />
       </button>
 
-      {/* Desktop sidebar */}
       <aside className="hidden lg:flex flex-col w-64 h-screen fixed left-0 top-0 bg-dark-900 border-r border-white/5 z-40">
         <SidebarContent />
       </aside>
 
-      {/* Mobile sidebar */}
       <AnimatePresence>
         {mobileOpen && (
           <>
@@ -96,10 +93,10 @@ export function AdminSidebar() {
             />
             <motion.aside
               className="fixed left-0 top-0 h-screen w-64 bg-dark-900 border-r border-white/5 z-50 flex flex-col lg:hidden"
-              initial={{ x: '-100%' }}
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={{ type: 'spring', damping: 25 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", damping: 25 }}
             >
               <div className="p-4 flex justify-end">
                 <button onClick={() => setMobileOpen(false)} className="text-white/60 p-2">

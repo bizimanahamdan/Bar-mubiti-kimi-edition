@@ -1,17 +1,17 @@
-'use client'
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Phone } from 'lucide-react'
+"use client"
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { motion, AnimatePresence } from "framer-motion"
+import { Menu, X, Phone } from "lucide-react"
 
 const links = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/menu', label: 'Menu' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/reviews', label: 'Reviews' },
-  { href: '/location', label: 'Location' },
-  { href: '/contact', label: 'Contact' },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/menu", label: "Menu" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/reviews", label: "Reviews" },
+  { href: "/location", label: "Location" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Navbar() {
@@ -20,15 +20,15 @@ export function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
   return (
     <>
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'glass-dark py-3' : 'bg-transparent py-5'
+          scrolled ? "glass-dark py-3" : "bg-transparent py-5"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -73,10 +73,10 @@ export function Navbar() {
         {mobileOpen && (
           <motion.div
             className="fixed inset-0 z-[60] bg-dark-950"
-            initial={{ opacity: 0, x: '100%' }}
+            initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'spring', damping: 25 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25 }}
           >
             <div className="flex justify-end p-4">
               <button onClick={() => setMobileOpen(false)} className="text-white p-2">
